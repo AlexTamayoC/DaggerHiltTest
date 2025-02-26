@@ -22,7 +22,9 @@ object DatabaseModule {
             context,
             MinecraftDatabase::class.java,
             "minecraft_database"
-        ).build()
+        )
+            .fallbackToDestructiveMigration()
+            .build()
     }
 
     @Singleton

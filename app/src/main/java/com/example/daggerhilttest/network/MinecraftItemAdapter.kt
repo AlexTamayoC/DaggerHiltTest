@@ -14,6 +14,7 @@ class MinecraftItemAdapter(private val items: List<MinecraftItem>) :
     inner class MinecraftViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val nameTextView: TextView = itemView.findViewById(R.id.itemName)
         val descriptionTextView: TextView = itemView.findViewById(R.id.itemDescription)
+        val materialTextView: TextView = itemView.findViewById(R.id.itemMaterial)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MinecraftViewHolder {
@@ -26,6 +27,7 @@ class MinecraftItemAdapter(private val items: List<MinecraftItem>) :
         val item = items[position]
         holder.nameTextView.text = item.name
         holder.descriptionTextView.text = item.description
+        holder.materialTextView.text = item.material
     }
 
     override fun getItemCount(): Int = items.size
